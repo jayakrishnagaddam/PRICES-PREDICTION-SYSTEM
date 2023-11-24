@@ -1,0 +1,22 @@
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #333; 
+  color: #fff;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.overlay-text {
+  position: absolute;
+  top: 10%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 36px;
+  text-align: center;
+}
+</style>
