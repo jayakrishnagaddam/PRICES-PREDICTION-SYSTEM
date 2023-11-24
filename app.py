@@ -8,9 +8,19 @@ db= PyMongo(app).db
 
 @app.route('/')
 def function():
-  db.users.insert_one({"b": 2})
+  user_data={
+    'username': 1,
+    'pass' : 2
+  }
+  db.users.insert_one(user_data)
   return render_template("index.html")
+@app.route('/login')
+def login():
+  return render_template('login.html')
 
 
+@app.route('/signup')
+def signup():
+  return render_template('signup.html')
 if __name__ == '__main__':
   app.run(host="0.0.0.0", debug=True)
