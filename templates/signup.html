@@ -16,6 +16,7 @@
                     color: black;
                     font-size: 24px;
                     text-align: center;">
+                    
         <form name="signup_form" method='POST'>
             <h1 class="text-center lead mb-4" style="font-size: 32px; text-color:rgb(27, 23, 23);">CREATE YOUR ACCOUNT</h1>
             <div class="form-outline mb-4">
@@ -38,7 +39,11 @@
                 <label class="form-label" name="password" for="form1Example23">Password</label>
             </div>
             <button type="submit" class="btn btn-dark btn-lg btn-block" id="signup-btn">Create Account</button>
-
+            {% if success_message %}
+            <div class="alert alert-success" role="alert">
+                {{ success_message }}
+            </div>
+        {% endif %}
             <div class="divider d-flex align-items-center my-4">
                 <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
             </div>
