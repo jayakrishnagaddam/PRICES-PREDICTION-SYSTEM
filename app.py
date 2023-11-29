@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "your_secret_key"  # Add a secret key for flash messages
+app.config["SECRET_KEY"] = "1234"  # Add a sec234ret key for flash messages
 app.config["MONGO_URI"] = "mongodb://localhost:27017/SAS"
 mongo = PyMongo(app)
 
@@ -48,6 +48,10 @@ def signup():
 @app.route('/homepage')
 def homepage():
     return render_template('homepage.html')
+
+@app.route('/kharif')
+def kharif():
+    return render_template('kharif.html')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
