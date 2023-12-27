@@ -53,5 +53,15 @@ def homepage():
 def kharif():
     return render_template('kharif.html')
 
+
+@app.route('/rabi')
+def rabi():
+    return render_template('rabi.html')
+
+
+@app.route('/zaid')
+def zaid():
+    return render_template('zaid.html')
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
