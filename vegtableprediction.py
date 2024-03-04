@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error
 
 usd_to_inr = 81.0
 
-vegetable_prices_df = pd.read_csv("Vegetable_average_prices.csv")
+vegetable_prices_df = pd.read_csv("Vegetable_prices_pred.csv")
 
 
 X = vegetable_prices_df[['Form', 'Yield', 'CupEquivalentSize', 'CupEquivalentUnit', 'CupEquivalentPrice']]
