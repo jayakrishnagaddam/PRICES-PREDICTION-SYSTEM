@@ -41,4 +41,4 @@ vegetable_price = pipeline.predict(vegetable_features)
 
 vegetable_price_inr = vegetable_price * usd_to_inr
 
-print(f"Predicted price of Vegetable: ₹{vegetable_price_inr[0]:.2f} per kilogram")
+print(f"{vegetable_price_inr[0]:.2f}")

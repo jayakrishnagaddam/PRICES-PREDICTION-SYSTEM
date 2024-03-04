@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "1234"  # Add a sec234ret key for flash messages
-app.config["MONGO_URI"] = "mongodb://localhost:27017/SAS"
+app.config["MONGO_URI"] = "mongodb+srv://2100090162:manigaddam@deepsheild.kzgpo9p.mongodb.net/VegetableDB"
 mongo = PyMongo(app)
 
 @app.route('/')

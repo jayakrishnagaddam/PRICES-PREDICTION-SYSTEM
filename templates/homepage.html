@@ -2,23 +2,166 @@
 <html>
     <head>
         <title>
-            Home Page
+            Price Star 🔸 Home
         </title>
-        {%include 'nav.html'%}
-       {%include 'style.css'%}
         {%include 'bootstrap.html'%}
-    </head>
-    <body style="background-color: #d2cdc8; color: #fff;  ">
+        {%include 'nav.html'%}
+        <style>
+       
 
-        <img src="static\pic1.jpg" alt="" style="filter: blur(10px);">
-        <div class="overlay-text"  style="color:black;">
-        
-                
-        
-        </div>
-        {%include 'footer.html'%}
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    </body>
+        .overlay-container {
+          text-align: center;
+          color: white;
+        }
+        .card{
+          background-color: black !important;
+          border: 10%;
+        }
+        .custom-card {
+          background-color: black;
+        color: black;
+        text-decoration: none;
+        }
+        .card-text{
+          color: azure;
+        }
+        .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('static/pic1.jpg');
+    background-size: cover;
+    filter: blur(5px);
+}
+body {
+    padding-top: 3%;
+    
+}
+</style>
+ <body class="text-center container">
+            <div class="background-container"></div>
+            <div class="">
+                <h2>Unveiling Price Star, Your AI Powered Pricing prediction System.</h2>
+                <p class="text-center" style="font-size: 20px;">We Provide accurate predictions to assist consumers and businesses in making informed
+                     decisions. Harnessing the power of predictive analytics, Price Star empowers users 
+                     to anticipate market fluctuations and optimize their purchasing strategies.</p>
+            </div>
+            <h2>
+                Predict Something
+            </h2>
+            <div>
+                <div class="text-center row" style="margin: 40px;">
+                    <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                      <div class="card-body custom-card">
+                        <a href="#" class="card custom-card">
+                        <h5 class="card-text">Predict Price</h5>
+                        <h6 class="card-text  mb-2">Vegetables 🥕</h6>
+                        <h6 class="card-subtitle mb-2" style="color:greenyellow">(Beta)</h6>
+                        <p class="card-text">The Data we used is Based on Prices of vegetables are from the Year 2020. Prices can
+                            be vary from time to time and Season to Season please observe
+                        </p>
+                        </a>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;color: black;">
+                      <div class="card-body custom-card">
+                        <a href="#" class="card custom-card">
+                        <h5 class="card-text">Predict Price</h5>
+                        <h6 class="card-text mb-2 ">A Fruit 🍎</h6>
+                        <h6 class="card-subtitle mb-2" style="color:greenyellow">(Beta)</h6>
+                        <p class="card-text">The Data we used is Based on Prices of Fruits are from the Year 2022. Prices can
+                            be vary from time to time and Season to Season please observe</p>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;color: black;">
+                      <div class="card-body custom-card">
+                        <a href="#" class="card custom-card">
+                        <h5 class="card-text">Predict Price</h5>
+                        <h6 class="card-text mb-2 ">Financial Markets 🕴️</h6>
+                        <h6 class="card-subtitle mb-2" style="color:greenyellow">(Beta)</h6>
+                        <p class="card-text">The Data we used is Based on Prices of Stocks are from the Year 2001 to 2022. Prices can
+                            be vary from time to time and Year to Year please observe</p>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;color: black;">
+                      <div class="card-body custom-card">
+                        <a href="#" class="card custom-card">
+                        <h5 class="card-text">Predict...</h5>
+                        <h6 class="card-text mb-2 ">Sports 🏏</h6>
+                        <h6 class="card-subtitle mb-2" style="color:greenyellow">(Beta)</h6>
+                        <p class="card-text">The Data we used is Based on Prices of Fruits are from the Year 2021. Prices can
+                            be vary from time to time and Season to Season please Observe</p>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-4">
+                    <div class="card" style="width: 18rem;color: black;">
+                      <div class="card-body custom-card">
+                        <a href="#" class="card custom-card">
+                        <h5 class="card-text">Predict...</h5>
+                        <h6 class="card-text mb-2 ">Weather Forecasting ⛈️</h6>
+                        <h6 class="card-subtitle mb-2" style="color:greenyellow">(Beta)</h6>
+                        <p class="card-text">The Data we used is Based on Prices of Fruits are from the Year 2022. Prices can
+                            be vary from time to time and Season to Season please Observe</p>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-4">
+                    <div class="card" style="width: 18rem;color: black;">
+                      <div class="card-body custom-card">
+                        <a href="#" class="card custom-card">
+                        <h5 class="card-text">Predict...</h5>
+                        <h6 class="card-text mb-2 ">Healthcare ❤️‍🩹</h6>
+                        <h6 class="card-subtitle mb-2" style="color:greenyellow">(Beta)</h6>
+                        <p class="card-text">The Data we used is Based on Prices of Fruits are from the Year 2022. Prices can
+                            be vary from time to time and Season to Season please Observe</p>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-4">
+                    <div class="card" style="width: 18rem;color: black;">
+                      <div class="card-body custom-card">
+                        <a href="#" class="card custom-card">
+                        <h5 class="card-text">Predict...</h5>
+                        <h6 class="card-text mb-2 ">Sales and Marketing 🔏</h6>
+                        <h6 class="card-subtitle mb-2" style="color:greenyellow">(Beta)</h6>
+                        <p class="card-text">The Data we used is Based on Prices of Fruits are from the Year 2022. Prices can
+                            be vary from time to time and Season to Season please Observe</p>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-4">
+                    <div class="card" style="width: 18rem;color: black;">
+                      <div class="card-body custom-card">
+                        <a href="#" class="card custom-card">
+                        <h5 class="card-text">Predict...</h5>
+                        <h6 class="card-text mb-2 ">Economics 📚</h6>
+                        <h6 class="card-subtitle mb-2" style="color:greenyellow">(Beta)</h6>
+                        <p class="card-text">The Data we used is Based on Prices of Fruits are from the Year 2022. Prices can
+                            be vary from time to time and Season to Season please Observe</p>
+                        </a>
+                      </div>
+                    </div>
+                </div>>
+           </div>
+            </div>
+            {%include 'footer.html'%}
+        </body>
+    </head>
 </html>
