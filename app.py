@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "1234"  # Add a sec234ret key for flash messages
+app.config["SECRET_KEY"] = "1234"  # Add a secret key for flash messages
 app.config["MONGO_URI"] = "mongodb+srv://2100090162:manigaddam@deepsheild.kzgpo9p.mongodb.net/VegetableDB"
 mongo = PyMongo(app)
 
@@ -21,12 +21,23 @@ def login():
         user_data = mongo.db.users.find_one({'username': username, 'password': password})
 
         if user_data:
-            flash('Login successful', 'success')  # Flash success message
+            session['username'] = username 
             return redirect(url_for('homepage'))
         else:
             error = 'Invalid username or password'
 
     return render_template('login.html', error=error)
+
+
+@app.route('/example')
+def example():
+    return render_template('example.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)  
+    flash('You have been logged out', 'success') 
+    return redirect(url_for('login'))
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -53,11 +64,9 @@ def homepage():
 def kharif():
     return render_template('kharif.html')
 
-
 @app.route('/rabi')
 def rabi():
     return render_template('rabi.html')
-
 
 @app.route('/zaid')
 def zaid():
