@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Price 🔸 Home</title>
-    
+   
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     
@@ -21,9 +21,10 @@
         /* Style the list of contents */
         .contents-list {
             list-style-type: none;
-            padding: 0;
+            
         }
         .contents-list li {
+            margin-top: 0px;
             margin-bottom: 10px;
         }
         /* Style links in the list */
@@ -32,49 +33,48 @@
             color: #333;
         }
         .contents-list a:hover {
-            text-decoration:solid;
+            text-decoration:underline;
         }
     </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <!-- Left Sidebar -->
             <div class="col-md-2 bg-light">
                 <div class="text-center py-3">
-                    <h2>Predict Prices</h2>
+                    <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Predict Prices</h2>
                 </div>
-                <ul class="contents-list px-3">
-                    <h4 style="font-family:cursive;">Daily Needs</h4>
-                    <li><a href="#section1">Vegetables</a></li>
+                <ul class="contents-list px-2">
+                    <h4 style="font-family:cursive;">Daily Needs 🥕</h4>
+                    <li><a href="javascript:void(0)" onclick="loadContent('vegetable.html')">Vegetables</a></li>
                     <li><a href="#section2">Fruits Prices</a></li>
                     <li><a href="#section3">Room Rent Analysis</a></li>
                     <li><a href="#section3">Electronics Price Analysis</a></li>
-                    <h4 style="font-family:cursive;"> Health Care</h4>
+                    <h4 style="font-family:cursive;"> Health Care ❤️‍🩹</h4>
                     <li><a href="#section2">Patient Flow</a></li>
                     <li><a href="#section3">Diseases Prediction</a></li>
                     <li><a href="#section2">Pandemic Prediction</a></li>
                     
-                    <h4 style="font-family:cursive;">Marketing</h4>
+                    <h4 style="font-family:cursive;">Marketing 🕴️</h4>
                     <li><a href="#section2">Economics</a></li>
                     <li><a href="#section1">Stock Prices</a></li>
-                    
                     <li><a href="#section3">Fraud Detection</a></li>
                     <li><a href="#section1">Event Prediction</a></li>
                     <li><a href="#section2">Market Trend Analysis</a></li>
-                    <h4 style="font-family:cursive;">Weather</h4>
+                    <h4 style="font-family:cursive;">Weather ⛈️</h4>
                     <li><a href="#section2">Weather Forecasting</a></li>
                     <li><a href="#section3">Natural Disasters Prediction</a></li>
                     <li><a href="#section3">Climate Prediction</a></li>
                 </ul>
             </div>
             <!-- Content Area -->
-            <div class="col-md-8 content">
-                <div class="text-center py-5">
+            <div class="col-md-8 content" id="main-content">
+                <div class="text-center py-2">
                     <h1>Welcome</h1>
+                    <h2>PRICES PREDICTION SYSTEM</h2>
                 </div>
             </div>
-            <!-- Right Sidebar -->
+            
             <div class="col-md-2 bg-light">
                 <div class="text-center py-3">
                     <h2>Right Sidebar</h2>
@@ -89,5 +89,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function loadContent(url) {
+            $('#main-content').load(url);
+        }
+    </script>
 </body>
 </html>

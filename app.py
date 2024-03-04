@@ -33,6 +33,12 @@ def login():
 def example():
     return render_template('example.html')
 
+
+
+app.route('/vegetable')
+def vegetable():
+    return render_template('vegetable.html')
+
 @app.route('/logout')
 def logout():
     session.pop('username', None)  
