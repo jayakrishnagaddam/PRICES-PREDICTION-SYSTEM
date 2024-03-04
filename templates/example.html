@@ -4,29 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Price 🔸 Home</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        .container {
-            display: flex;
-        }
-        .sidebar {
-            width: 250px;
-            background-color: #f2f2f2;
-            padding: 5px;
-            box-sizing: border-box;
-        }
         .content {
-            flex: 1;
-            padding: 5px;
-            box-sizing: border-box;
-        }
-        .sidebar-right {
-            width: 270px;
-            background-color: #f2f2f2;
             padding: 5px;
             box-sizing: border-box;
         }
@@ -44,65 +32,62 @@
             color: #333;
         }
         .contents-list a:hover {
-            text-decoration: underline;
+            text-decoration:solid;
         }
     </style>
 </head>
-<body >
-    <div class="container">
-        <div class="sidebar">
-            <div class="text-center">
-            <h2>Predict Prices</h2>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Sidebar -->
+            <div class="col-md-2 bg-light">
+                <div class="text-center py-3">
+                    <h2>Predict Prices</h2>
+                </div>
+                <ul class="contents-list px-3">
+                    <h4 style="font-family:cursive;">Daily Needs</h4>
+                    <li><a href="#section1">Vegetables</a></li>
+                    <li><a href="#section2">Fruits Prices</a></li>
+                    <li><a href="#section3">Room Rent Analysis</a></li>
+                    <li><a href="#section3">Electronics Price Analysis</a></li>
+                    <h4 style="font-family:cursive;"> Health Care</h4>
+                    <li><a href="#section2">Patient Flow</a></li>
+                    <li><a href="#section3">Diseases Prediction</a></li>
+                    <li><a href="#section2">Pandemic Prediction</a></li>
+                    
+                    <h4 style="font-family:cursive;">Marketing</h4>
+                    <li><a href="#section2">Economics</a></li>
+                    <li><a href="#section1">Stock Prices</a></li>
+                    
+                    <li><a href="#section3">Fraud Detection</a></li>
+                    <li><a href="#section1">Event Prediction</a></li>
+                    <li><a href="#section2">Market Trend Analysis</a></li>
+                    <h4 style="font-family:cursive;">Weather</h4>
+                    <li><a href="#section2">Weather Forecasting</a></li>
+                    <li><a href="#section3">Natural Disasters Prediction</a></li>
+                    <li><a href="#section3">Climate Prediction</a></li>
+                </ul>
             </div>
-            <ul class="contents-list">
-                <h3>Daily Needs</h3>
-                <li><a href="#section1">Vegetables</a></li>
-                <li><a href="#section2">Fruits Prices</a></li>
-                <h3>Wheather</h3>
-                <li><a href="#section2">Wheather Forecasting</a></li>
-                <li><a href="#section3">Natural Disasters Prediction</a></li>
-                <li><a href="#section3">Climate Prediction</a></li>
-                <h3>Health Care</h3>
-                <li><a href="#section2">Patient Flow</a></li>
-                <li><a href="#section3">Diseases Prediction</a></li>
-                <li><a href="#section2">Pandemic Prediction</a></li>
-                <h3>Sales and Marketing</h3>
-                <li><a href="#section2">Economics</a></li>
-                <li><a href="#section1">Stock Prices</a></li>
-                
-                <li><a href="#section3">Fraud Detection</a></li>
-                <li><a href="#section1">Event Prediction</a></li>
-                <li><a href="#section2">Market Trend Analysis</a></li>
-                <li><a href="#section3">Section 3</a></li>
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-                
-                
-                
-
-                <!-- Add more list items as needed -->
-            </ul>
-        </div>
-        <div class="content">
-            <h1 id="section1">Section 1</h1>
-            <p>This is the main content of Section 1.</p>
-            <h1 id="section2">Section 2</h1>
-            <p>This is the main content of Section 2.</p>
-            <h1 id="section3">Section 3</h1>
-            <p>This is the main content of Section 3.</p>
-            <!-- Add more content sections as needed -->
-        </div>
-        <div class="sidebar-right">
-            <h2>Right Sidebar</h2>
-            <p>This is the content of the right sidebar.</p>
+            <!-- Content Area -->
+            <div class="col-md-8 content">
+                <div class="text-center py-5">
+                    <h1>Welcome</h1>
+                </div>
+            </div>
+            <!-- Right Sidebar -->
+            <div class="col-md-2 bg-light">
+                <div class="text-center py-3">
+                    <h2>Right Sidebar</h2>
+                </div>
+                <div class="px-3">
+                    <p>This is the content of the right sidebar.</p>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
