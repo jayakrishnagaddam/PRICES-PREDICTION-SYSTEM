@@ -20,23 +20,22 @@ def login():
         password = request.form.get('password')
         user_data = mongo.db.users.find_one({'username': username, 'password': password})
         if user_data:
-            firstname = user_data['first_name']  # Corrected syntax here
+            firstname = user_data['first_name']
             session['username'] = username
-            return redirect(url_for('homepage', name=firstname))
+            return redirect(url_for('example', name=firstname))
         else:
             error = 'Invalid username or password'
 
     return render_template('login.html', error=error)
 
-@app.route('/homepage/<name>')
-def homepage(name):
-    return render_template('homepage.html', name=name)
+@app.route('/homepage')
+def homepage():
+    return render_template('homepage.html')
 
 
 @app.route('/example/<name>')
-def example():
-    data=request.args.get('name')
-    return render_template('example.html',name=data)
+def example(name):
+    return render_template('example.html',name=name)
 
 
 

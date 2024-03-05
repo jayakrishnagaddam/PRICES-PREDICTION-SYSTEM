@@ -12,44 +12,61 @@
          #rightid {
         list-style-type: none;
         margin-left: 2px;
-         
     }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .content {
-            padding: 5px;
-            box-sizing: border-box;
-        }
-        /* Style the list of contents */
-        .contents-list {
-            list-style-type: none;
-            
-        }
-        .contents-list li {
-            margin-top: 0px;
-            margin-bottom: 10px;
-        }
-        /* Style links in the list */
-        .contents-list a {
-            text-decoration: none;
-            color: #333;
-        }
-        .contents-list a:hover {
-            text-decoration:underline;
-        }
-        .upgrade-item {
-    border-bottom: 1px solid #ccc; /* Add a border-bottom to create a line */
-}
-
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .content {
+        padding: 5px;
+        box-sizing: border-box;
+        overflow-y: scroll; /* Enable vertical scrolling for the middle content */
+        height: 100vh; /* Set a fixed height to enable scrolling */
+    }
+    
+    /* Left Sidebar */
+    .col-md-2.bg-light.left-sidebar {
+        overflow-y: hidden; /* Hide vertical scrolling for the left sidebar */
+    }
+    
+    /* Right Sidebar */
+    .col-md-2.bg-light.right-sidebar {
+        overflow-y: hidden; /* Hide vertical scrolling for the right sidebar */
+    }
+    
+    /* Style the list of contents */
+    .contents-list {
+        list-style-type: none;
+    }
+    
+    .contents-list li {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    
+    /* Style links in the list */
+    .contents-list a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .contents-list a:hover {
+        text-decoration:underline;
+    }
+    
+    .upgrade-item {
+        border-bottom: 1px solid #ccc; /* Add a border-bottom to create a line */
+    }
+    
     </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 bg-light">
+            <div class="col-md-2 bg-light left-sidebar">
                 <div class="text-center py-3">
                     <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Predict Prices</h2>
                 </div>
@@ -74,6 +91,8 @@
                     <li><a href="#section2">Weather Forecasting</a></li>
                     <li><a href="#section3">Natural Disasters Prediction</a></li>
                     <li><a href="#section3">Climate Prediction</a></li>
+                    <li><a href="#section3">Earthquake Prediction</a></li>
+                   <!-- Your sidebar content -->
                 </ul>
             </div>
             <!-- Content Area -->
@@ -91,21 +110,20 @@
                         
                       </div>
                       <div class="text-center mt-4 lead">
-                        <h4 class="mt-2"><b>Unveiling Price Star, Your AI Powered Pricing prediction System.</b></h4>
+                        <h4 class="mt-2"><b>Unveiling Predator, Your AI Powered Pricing Prediction System.</b></h4>
                         <p class="text-center lead" style="font-size: 17px;">We Provide accurate predictions to assist consumers and businesses in making informed
                              decisions. Harnessing the power of predictive analytics, Price Star empowers users 
                              to anticipate market fluctuations and optimize their purchasing strategies.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-md-2 bg-light">
+            <div class="col-md-2 bg-light right-sidebar">
                 <div class="px-3">
                     <h3 class="mt-2 mb-4">Control Bar</h3>
                     <p>Welcome {{name}}</p>
                     <ul id="rightid">
                         <li class="mb-4" >
-                            <a href="#" class="" style="text-decoration: none; color:black;"> Home</a>
+                            <a href="{{url_for('homepage')}}" class="" style="text-decoration: none; color:black;"> Home</a>
                         </li>
                         <li class="mb-4">
                             <a href="#" class="" style="text-decoration: none; color:black;">Contact us</a>
@@ -117,15 +135,21 @@
                         </li>
                         <li class="mb-4">
                             <a href="#" class="" style="text-decoration: none; color:black;">Careers</a>
-                        
+        
                         </li>
-                        <li class="mb-4">
-                            <a href="#" class="" style="text-decoration: none; color:black;">Log Out</a>
                         
-                        </li>
+                          
                     </ul>
+                    <div style="position: absolute; top: 85%;">
+                    <li  id="rightid" class="upgrade-item"></li>
+                        <li class=" mt-4 mb-4">
+                            <a href="{{url_for('logout')}}" class="" style="text-decoration: none; color:black;">Log Out</a>
+                        </li>
+                    <p style="font-size: 12px; text-decoration: none; color:black;">
+                        © 2023 Copyright : Jaya Krishna Gaddam
+                    </p>
+                    </div>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -133,6 +157,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
 </body>
 </html>
