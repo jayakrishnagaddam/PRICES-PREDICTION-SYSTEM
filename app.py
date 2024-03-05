@@ -10,6 +10,7 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -17,16 +18,19 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-
         user_data = mongo.db.users.find_one({'username': username, 'password': password})
-
         if user_data:
-            session['username'] = username 
-            return redirect(url_for('homepage'))
+            firstname = user_data['first_name']  # Corrected syntax here
+            session['username'] = username
+            return redirect(url_for('homepage', name=firstname))
         else:
             error = 'Invalid username or password'
 
     return render_template('login.html', error=error)
+
+@app.route('/homepage/<name>')
+def homepage(name):
+    return render_template('homepage.html', name=name)
 
 
 @app.route('/example')
@@ -61,10 +65,6 @@ def signup():
         return redirect(url_for('login'))
 
     return render_template('signup.html')
-
-@app.route('/homepage')
-def homepage():
-    return render_template('homepage.html')
 
 @app.route('/kharif')
 def kharif():

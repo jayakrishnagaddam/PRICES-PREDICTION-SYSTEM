@@ -33,29 +33,31 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('static/pic1.jpg');
+    background-color: antiquewhite;
+    background-image: url('static/pic1.jpg')!important;
     background-size: cover;
     filter: blur(5px);
 }
 body {
-    padding-top:4%;
+    padding-top:5%;
     
 }
 </style>
  <body class="text-center container">
             <div class="background-container"></div>
-            <div class="">
+            <h2 class="">Welcome {{name}} !</h2>
+            <div>
                 <h2>Unveiling Price Star, Your AI Powered Pricing prediction System.</h2>
                 <p class="text-center" style="font-size: 20px;">We Provide accurate predictions to assist consumers and businesses in making informed
                      decisions. Harnessing the power of predictive analytics, Price Star empowers users 
                      to anticipate market fluctuations and optimize their purchasing strategies.</p>
             </div>
-            <h2>
+            <h1 class="mt-4">
                 Predict Something
-            </h2>
+            </h1>
             <div>
                 <div class="text-center row" style="margin: 40px;">
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 mt-2">
                     <div class="card" style="width: 18rem;">
                       <div class="card-body custom-card">
                         <a href="#" class="card custom-card">
@@ -69,7 +71,7 @@ body {
                       </div>
                     </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 mt-2">
                     <div class="card" style="width: 18rem;color: black;">
                       <div class="card-body custom-card">
                         <a href="#" class="card custom-card">
@@ -82,7 +84,7 @@ body {
                       </div>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 mt-2">
                     <div class="card" style="width: 18rem;color: black;">
                       <div class="card-body custom-card">
                         <a href="#" class="card custom-card">
@@ -95,7 +97,7 @@ body {
                       </div>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 mt-2">
                     <div class="card" style="width: 18rem;color: black;">
                       <div class="card-body custom-card">
                         <a href="#" class="card custom-card">
@@ -159,15 +161,18 @@ body {
                         </a>
                       </div>
                     </div>
-                </div>
+                  </div>
+                  <div class="text-center lead alert alert-warning mt-4" role="alert"><p>Predator is a Pre-Trained Artificial
+                    Intelligence Model that uses past data of different things 
+                   and needs. It predicts past and future prices and values. Note: Predator can produce wrong assumptions and predictions 
+                   kindly observe and act accordingly...</p>
+                   <a href="example" class="btn btn-primary" role="button">Enter Predator</a>
+               </div>
            </div>
             </div>
+          
             
-     <div class="text-center"><p>Predator is a Pre-Trained Artificial Intelligence Model that uses past data of different things 
-         and needs that predicts past band future prices and values. Note: Predator can produce wrong assumptions and predictions 
-         kindly observe and act accordingly...</p>
-         <a href="example" class="btn btn-primary" role="button">Enter Predator</a>
-     </div>
+     
             {%include 'footer.html'%}
         </body>
     </head>
