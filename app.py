@@ -33,13 +33,14 @@ def homepage(name):
     return render_template('homepage.html', name=name)
 
 
-@app.route('/example')
+@app.route('/example/<name>')
 def example():
-    return render_template('example.html')
+    data=request.args.get('name')
+    return render_template('example.html',name=data)
 
 
 
-app.route('/vegetable')
+@app.route('/vegetable')
 def vegetable():
     return render_template('vegetable.html')
 

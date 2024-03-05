@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Price 🔸 Home</title>
-   
+   {%include 'bootstrap.html'%}
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
+         #rightid {
+        list-style-type: none;
+        margin-left: 2px;
+         
+    }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -35,6 +40,10 @@
         .contents-list a:hover {
             text-decoration:underline;
         }
+        .upgrade-item {
+    border-bottom: 1px solid #ccc; /* Add a border-bottom to create a line */
+}
+
     </style>
 </head>
 <body>
@@ -46,7 +55,7 @@
                 </div>
                 <ul class="contents-list px-2">
                     <h4 style="font-family:cursive;">Daily Needs </h4>
-                    <li><a href="javascript:void(0)" onclick="loadContent('vegetable.html')">Vegetables</a></li>
+                    <li><a href="vegetable">Vegetables</a></li>
                     <li><a href="#section2">Fruits Prices</a></li>
                     <li><a href="#section3">Room Rent Analysis</a></li>
                     <li><a href="#section3">Electronics Price Analysis</a></li>
@@ -68,20 +77,55 @@
                 </ul>
             </div>
             <!-- Content Area -->
-            <div class="col-md-8 content" id="main-content">
-                <div class="text-center py-2">
-                    <h1>Welcome</h1>
-                    <h2>PRICES PREDICTION SYSTEM</h2>
+            <div class="col-md-8 content">
+                <div class="py-2">
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <b>Predator</b> AI
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Predator 1.0</a>
+                            <a class="dropdown-item upgrade-item" href="#">Predator 2.0</a>
+                            <a class="dropdown-item" href="#">Upgrade Version</a>
+                        </div>
+                        
+                      </div>
+                      <div class="text-center mt-4 lead">
+                        <h4 class="mt-2"><b>Unveiling Price Star, Your AI Powered Pricing prediction System.</b></h4>
+                        <p class="text-center lead" style="font-size: 17px;">We Provide accurate predictions to assist consumers and businesses in making informed
+                             decisions. Harnessing the power of predictive analytics, Price Star empowers users 
+                             to anticipate market fluctuations and optimize their purchasing strategies.</p>
+                    </div>
                 </div>
             </div>
             
             <div class="col-md-2 bg-light">
-                <div class="text-center py-3">
-                    <h2>Right Sidebar</h2>
-                </div>
                 <div class="px-3">
-                    <p>This is the content of the right sidebar.</p>
+                    <h3 class="mt-2 mb-4">Control Bar</h3>
+                    <p>Welcome {{name}}</p>
+                    <ul id="rightid">
+                        <li class="mb-4" >
+                            <a href="#" class="" style="text-decoration: none; color:black;"> Home</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="" style="text-decoration: none; color:black;">Contact us</a>
+                        
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="" style="text-decoration: none; color:black;"> About</a>
+                        
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="" style="text-decoration: none; color:black;">Careers</a>
+                        
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="" style="text-decoration: none; color:black;">Log Out</a>
+                        
+                        </li>
+                    </ul>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -89,11 +133,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        function loadContent(url) {
-            $('#main-content').load(url);
-        }
-    </script>
+    
 </body>
 </html>
