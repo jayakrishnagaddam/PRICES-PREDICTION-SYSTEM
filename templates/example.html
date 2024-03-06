@@ -25,7 +25,8 @@
     .content {
         padding: 5px;
         box-sizing: border-box;
-        overflow-y: scroll; /* Enable vertical scrolling for the middle content */
+        overflow-y: scroll;
+        overflow: hidden; /* Enable vertical scrolling for the middle content */
         height: 100vh; /* Set a fixed height to enable scrolling */
     }
     
@@ -61,6 +62,10 @@
     
     .upgrade-item {
         border-bottom: 1px solid #ccc; /* Add a border-bottom to create a line */
+    }
+    a{
+        text-decoration: none;
+        font-size: 13px;
     }
     
     </style>
@@ -111,9 +116,9 @@
                         </div>
                         
                       </div>
-                      <div class="text-center mt-4 lead" style="padding-top: 15px;">
-                        <h4 class="mt-2"><b>Unveiling Predator, Your AI Powered Pricing Prediction System.</b></h4>
-                        <p class="text-center lead" style="font-size: 17px;">We Provide accurate predictions to assist consumers and businesses in making informed
+                      <div class="text-center mt-2" style="padding-top: 15px;">
+                        <p class="mt-2 mb-0" style="font-size:18px;"> <b>Unveiling Predator, Your AI Powered Pricing Prediction System.</b></p>
+                        <p class="text-center mt-2" style="font-size: 14px;">We Provide accurate predictions to assist consumers and businesses in making informed
                              decisions. Harnessing the power of predictive analytics, Price Star empowers users 
                              to anticipate market fluctuations and optimize their purchasing strategies.</p>
                     </div>
@@ -123,7 +128,7 @@
                         </button>
                     </div>
                     <div class="container" style="position: absolute; top: 70%; ;left: 55%;">
-                         <button type="button" class="btn btn-light btn-lg"><b style="font-size: 16px; ">wheather</b>
+                         <button type="button" class="btn btn-light btn-lg"><b style="font-size: 16px; ">Wheather</b>
                         <div style="font-size: 12px;">Click here to observe wheather actions and Predictions, more</div>
                         </button>
                         </div>
@@ -141,7 +146,7 @@
                            
                     </div>
                     <div class="mt-4 text-center" style="position: absolute; top: 90%; left: 28%;">
-                    <p class="text-center" style="font-size: 12px;">Disclaimer: Predator is trained based on past data.Data of Present and future may vary...</p>
+                    <p class="text-center" style="font-size: 12px;">Disclaimer: Predator is trained based on past data. Data of Present and future may vary...</p>
                 </div>
                     
                 </div>
@@ -149,7 +154,7 @@
             <div class="col-md-2 bg-light right-sidebar">
                 <div class="px-3">
                     <h3 class="mt-4 mb-4">Control Bar</h3>
-                    <p>Welcome {{name}}</p>
+                    <p>Welcome {{name}} !</p>
                     <ul id="rightid">
                         <li class="mb-4" >
                             <a href="{{url_for('homepage')}}" class="" style="text-decoration: none; color:black;"> Home</a>
