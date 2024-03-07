@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
+from vegetableprediction import predict_vegetable_price
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
@@ -9,7 +10,6 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     return render_template("index.html")
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -32,12 +32,9 @@ def login():
 def homepage():
     return render_template('homepage.html')
 
-
 @app.route('/example/<name>')
 def example(name):
     return render_template('example.html',name=name)
-
-
 
 @app.route('/vegetable')
 def vegetable():
@@ -66,17 +63,17 @@ def signup():
 
     return render_template('signup.html')
 
-@app.route('/kharif')
-def kharif():
-    return render_template('kharif.html')
+@app.route('/final')
+def final():
+    return render_template('final.html')
 
-@app.route('/rabi')
-def rabi():
-    return render_template('rabi.html')
-
-@app.route('/zaid')
-def zaid():
-    return render_template('zaid.html')
+# Route to handle vegetable price prediction
+@app.route('/predict', methods=['POST'])
+def predict():
+    if request.method == 'POST':
+        vegetable_name = request.form.get('vegetable')
+        predicted_price = predict_vegetable_price(vegetable_name)
+        return jsonify(predicted_price)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)

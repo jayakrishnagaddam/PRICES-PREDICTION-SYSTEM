@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Page</title>
+    <!-- Include any necessary stylesheets or scripts here -->
+</head>
+<body>
+
+<h1>Final Page</h1>
+
+<div id="predictionResult"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Function to send AJAX request to Flask server and display prediction
+        function getPrediction(vegetableName) {
+            $.ajax({
+                type: 'POST',
+                url: '/predict',
+                data: { vegetable: vegetableName },
+                success: function (response) {
+                    $('#predictionResult').text('Predicted price (in INR): ' + response);
+                },
+                error: function () {
+                    $('#predictionResult').text('Error occurred while fetching prediction');
+                }
+            });
+        }
+
+        // Assuming the vegetable name is selected somewhere on the page and stored in a variable
+        var selectedVegetable = 'Tomatoes'; // Example vegetable name
+
+        // Call the getPrediction function with the selected vegetable name
+        getPrediction(selectedVegetable);
+    });
+</script>
+
+</body>
+</html>
