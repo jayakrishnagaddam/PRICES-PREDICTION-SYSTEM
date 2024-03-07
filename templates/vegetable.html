@@ -1,73 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Vegetable Prediction</title>
-    {% include 'bootstrap.html' %}
-    {% include 'indexnav.html' %}
-    <style>
-        body {
-            color: aliceblue;
-            padding-top: 4%;
-            background-color: black !important;
-        }
+    <head>
+        <title>Vegetable Prediction</title>
+        {%include 'bootstrap.html'%}
+        {%include 'indexnav.html'%}
+        <style>
+            body{
+                color: aliceblue     ;
+                padding-top: 4%;
+                background-color: black !important;
+            }
+            #header{
+                padding-top: 6%;
+            }
+            a{
+                text-decoration: none;
+                color: aqua;
 
-        #header {
-            padding-top: 6%;
-        }
+            }
+        </style>
+    </head>
+    <body class="container">
+        <h2 class="lead" style="color: white; font-size:34px;">Vegetable Prices Prediction</h2>
+          <div class="mt-4 row" style="position: relative; left: 5%;">
+             <div class="col">
+              <p>What is Prices Prediction System?</p>
+              <p>Price prediction systems often use a combination of historical data, 
+                statistical analysis, machine learning algorithms, and sometimes fundamental
+                 analysis to generate predictions. These predictions can range from short-term 
+                 price movements to long-term trends.However, it's important to note that predicting
+                  prices accurately is extremely challenging due to the complexity of financial markets 
+                  and the presence of various unpredictable factors such as economic indicators, geopolitical 
+                  events, and market sentiment.</p>
+             </div>
+             <div class="col">
+                <p>How does it work?</p>
+                <p>The system gathers historical data relevant to the asset or commodity being analyzed. This data
+                     can include price movements, trading volume, market sentiment indicators, fundamental economic
+                      factors, and other relevant variables.It's important to note that while price prediction systems
+                       can provide valuable insights, they are not infallible, and there are inherent uncertainties and
+                        risks involved in predicting financial markets. Traders and investors should use these predictions 
+                        as one of many inputs in their decision-making process and exercise caution.</p>
+               </div>
+          </div> 
 
-        a {
-            text-decoration: none;
-            color: aqua;
-        }
-        .prediction {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-    </style>
-</head>
-<body class="container">
-<h2 class="lead" style="color: white; font-size:34px;">Vegetable Prices Prediction</h2>
-<div class="mt-4 row" style="position: relative;">
-    <div class="col">
-        <p>What is Prices Prediction System?</p>
-        <p>Price prediction systems often use a combination of historical data,
-            statistical analysis, machine learning algorithms, and sometimes fundamental
-            analysis to generate predictions. These predictions can range from short-term
-            price movements to long-term trends. However, it's important to note that predicting
-            prices accurately is extremely challenging due to the complexity of financial markets
-            and the presence of various unpredictable factors such as economic indicators, geopolitical
-            events, and market sentiment.</p>
-    </div>
-    <div class="col">
-        <p>How does it work?</p>
-        <p>The system gathers historical data relevant to the asset or commodity being analyzed. This data
-            can include price movements, trading volume, market sentiment indicators, fundamental economic
-            factors, and other relevant variables. It's important to note that while price prediction systems
-            can provide valuable insights, they are not infallible, and there are inherent uncertainties and
-            risks involved in predicting financial markets. Traders and investors should use these predictions
-            as one of many inputs in their decision-making process and exercise caution.</p>
-    </div>
-</div>
-
-<div id="header">
-    <h2 class="lead" style="font-size: 34px;">All Vegetables</h2>
-    <p class="lead" style="font-size: 12px;">Sorted by Market Cap...</p>
-    <div class="row">
-        <div class="col">
+          <div id="header">
+            <h2 class="lead" style="font-size: 34px;">All Vegetables</h2>
+            <p class="lead" style="font-size: 12px;">Sorted by Market Cap...</p>
+            <div class="row">
+                <div class="col">
             <ul>
                 <li>
-                    <a class="mt-4 vegetable-link" href="#" data-vegetable="Tomato">Tomatoes</a>
+                    <a class="mt-4" href="#">Tomatoes</a>
                 </li>
                 <li class="mt-3">
-                    <a class="mt-4 vegetable-link" href="#" data-vegetable="Acorn squash">Acorn squash</a>
+                    <a class="mt-4" href="#">Acorn squash</a>
                 </li>
                 <li class="mt-3">
-                    <a class="mt-4 vegetable-link" href="#" data-vegetable="Artichoke">Artichoke</a>
+                    <a class="mt-4" href="#">Artichoke</a>
                 </li>
                 <li class="mt-3">
                     <a class="mt-4" href="#">Asparagus</a>
@@ -207,43 +197,6 @@
             </div>
             </div>
           </div>
-          <div id="predictionResult"></div>
-
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-          <script>
-            $(document).ready(function () {
-                $(".vegetable-link").click(function (event) {
-                    event.preventDefault();
-                    var vegetable = $(this).data('vegetable');
-                    predictVegetablePrice(vegetable);
-                });
-            });
-        
-            function predictVegetablePrice(vegetable) {
-                $.ajax({
-                    type: "POST",
-                    url: "/predict",
-                    data: { vegetable: vegetable },
-                    success: function (response) {
-                        displayPrediction(vegetable, response);
-                    },
-                    error: function () {
-                        $('#predictionResult').text('Error occurred while fetching prediction');
-                    }
-                });
-            }
-        
-            function displayPrediction(vegetable, prediction) {
-                // Construct the prediction message
-                var predictionMessage = `Predicted price (in INR) of ${vegetable}: ${prediction}`;
-        
-                // Create a new element to contain the prediction message
-                var predictionElement = $('<div></div>').addClass('prediction').text(predictionMessage);
-        
-                // Append the prediction element to the predictionResult container
-                $('#predictionResult').empty().append(predictionElement);
-            }
-        </script>
-        
+       
     </body>
 </html>
