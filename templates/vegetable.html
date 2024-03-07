@@ -2,10 +2,31 @@
 <html>
     <head>
         <style>
-
+          body{
+            padding-top: 4%;
+            background-color: black !important;
+            color: white !important;
+          }   
         </style>
+        {%include 'bootstrap.html'%}
+        {%include 'indexnav.html'%}
     </head>
-    <body id="main-content">
-        <h1 class="text-center">Welcome to Vegetable Prediction</h1>
+    <body class="container">
+        <div id="header">
+            <h2 class="mt-2" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Vegetable Prices Prediction</h2>
+            <p id="subheader" class="lead" style="position: relative;">What is Vegetable Prices Prediction?</p>
+        <p id="subheader" class="lead"> Vegetable price prediction is the process of using historical datasets and statistical models to 
+            forecast the future prices of various vegetables. This predictive analysis involves analyzing factors
+             such as seasonal trends, weather conditions, demand-supply dynamics, economic indicators, and other 
+             relevant variables that influence vegetable prices.</p>
+        
+        </div>
+        
+        <div class="clearfix"></div>
+        
+        <!-- Content below the header -->
+        <div>
+            <p>This is the content below the header.</p>
+        </div>
     </body>
 </html>

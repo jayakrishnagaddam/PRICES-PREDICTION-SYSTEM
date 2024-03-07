@@ -78,11 +78,13 @@
                     <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Predict Prices</h2>
                 </div>
                 <ul class="contents-list px-2">
-                    <h4 style="font-family:cursive;">Daily Needs </h4>
-                    <li><a href="vegetable">Vegetables</a></li>
+                    <h4 class="mb-3" style="font-family:cursive;">Daily Needs </h4>
+                    <li ><a href="{{url_for('vegetable')}}">Vegetables</a></li>
                     <li><a href="#section2">Fruits Prices</a></li>
                     <li><a href="#section3">Room Rent Analysis</a></li>
                     <li><a href="#section3">Electronics Price Analysis</a></li>
+
+
                     <h4 style="font-family:cursive;"> Health Care </h4>
                     <li><a href="#section2">Patient Flow</a></li>
                     <li><a href="#section3">Diseases Prediction</a></li>
@@ -119,7 +121,7 @@
                       <div class="text-center mt-2" style="padding-top: 15px;">
                         <p class="mt-2 mb-0" style="font-size:18px;"> <b>Unveiling Predator, Your AI Powered Pricing Prediction System.</b></p>
                         <p class="text-center mt-2" style="font-size: 14px;">We Provide accurate predictions to assist consumers and businesses in making informed
-                             decisions. Harnessing the power of predictive analytics, Price Star empowers users 
+                             decisions. Harnessing the power of predictive analytics, Predator empowers users 
                              to anticipate market fluctuations and optimize their purchasing strategies.</p>
                     </div>
                     <div class="container" style="position: absolute; top: 70%; ;left: 5%;">
@@ -153,8 +155,8 @@
             </div>
             <div class="col-md-2 bg-light right-sidebar">
                 <div class="px-3">
-                    <h3 class="mt-4 mb-4">Control Bar</h3>
-                    <p>Welcome {{name}} !</p>
+                    <h3 class="mt-4 mb-4" style="position: relative; left: 4px;">Control Bar</h3>
+                    <p style="position: relative; right: 8px;">Welcome {{name}} !</p>
                     <ul id="rightid">
                         <li class="mb-4" >
                             <a href="{{url_for('homepage')}}" class="" style="text-decoration: none; color:black;"> Home</a>
