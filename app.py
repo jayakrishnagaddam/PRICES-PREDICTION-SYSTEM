@@ -37,7 +37,9 @@ def homepage():
 def predator(name):
     return render_template('predator.html',name=name)
 
-
+@app.route('/careers')
+def careers():
+    return render_template('careers.html')
 
 @app.route('/vegetable')
 def vegetable():
