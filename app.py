@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "1234"  # Add a secret key for flash messages
+app.config["SECRET_KEY"] = "1234"
 app.config["MONGO_URI"] = "mongodb+srv://2100090162:manigaddam@deepsheild.kzgpo9p.mongodb.net/VegetableDB"
 mongo = PyMongo(app)
 
@@ -66,9 +66,9 @@ def signup():
 
     return render_template('signup.html')
 
-@app.route('/final')
-def final():
-    return render_template('final.html')
+@app.route('/contactus')
+def contactus():
+    return render_template('contactus.html')
     
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
