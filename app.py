@@ -22,7 +22,7 @@ def login():
         if user_data:
             firstname = user_data['first_name']
             session['username'] = username
-            return redirect(url_for('example', name=firstname))
+            return redirect(url_for('predator', name=firstname))
         else:
             error = 'Invalid username or password'
 
@@ -33,9 +33,9 @@ def homepage():
     return render_template('homepage.html')
 
 
-@app.route('/example/<name>')
-def example(name):
-    return render_template('example.html',name=name)
+@app.route('/predator/<name>')
+def predator(name):
+    return render_template('predator.html',name=name)
 
 
 
