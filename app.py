@@ -45,6 +45,10 @@ def careers():
 def vegetable():
     return render_template('vegetable.html')
 
+@app.route('/localmarkets')
+def localmarkets():
+    return render_template('localmarkets.html')
+
 @app.route('/logout')
 def logout():
     session.pop('username', None)  
