@@ -72,9 +72,25 @@ def signup():
 
     return render_template('signup.html')
 
-@app.route('/contactus')
+@app.route('/predator')
+def pradator():
+    return render_template('index.html')
+@app.route('/received')
+def received():
+    return render_template('received.html')
+
+@app.route('/contactus', methods=['POST','GET'])
 def contactus():
+    if request.method == "POST":
+        complaints={
+        'Name' : request.form['name'],
+        'Email' : request.form['email'],
+        'Problem' : request.form['problem']
+        }
+
+        mongo.db.complaints.insert_one(complaints)
+        return redirect(url_for('received'))
     return render_template('contactus.html')
-    
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
