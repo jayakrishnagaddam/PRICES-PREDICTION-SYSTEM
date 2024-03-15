@@ -22,6 +22,7 @@ def login():
         if user_data:
             firstname = user_data['first_name']
             session['username'] = username
+            session['first_name']=firstname
             return redirect(url_for('predator', name=firstname))
         else:
             error = 'Invalid username or password'
@@ -76,20 +77,24 @@ def signup():
 def pradator():
     return render_template('index.html')
 @app.route('/received')
+
 def received():
     return render_template('received.html')
 
 @app.route('/contactus', methods=['POST','GET'])
 def contactus():
     if request.method == "POST":
-        complaints={
-        'Name' : request.form['name'],
-        'Email' : request.form['email'],
-        'Problem' : request.form['problem']
+        complaints = {
+            'Name': request.form['name'],
+            'Email': request.form['email'],
+            'Problem': request.form['problem']
         }
-
+        
         mongo.db.complaints.insert_one(complaints)
-        return redirect(url_for('received'))
+        
+        if session.get('first_name'):  # Check if 'username' is in the session
+            name = session['first_name']
+            return redirect(url_for('predator', name=name))
     return render_template('contactus.html')
 
 if __name__ == '__main__':
