@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 from flask_pymongo import PyMongo
 import os
+from vegetableprediction import method
 from dotenv import load_dotenv
 
 
@@ -10,6 +11,15 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
+
+@app.route('/predict_price/<vegetable_name>')
+def predict_price(vegetable_name):
+    try:
+        price_prediction = method(vegetable_name)
+        formatted_price = "{:.2f}".format(price_prediction)
+        return render_template('prediction.html', vegetable=vegetable_name, price=formatted_price)
+    except Exception as e:
+        return f"Error predicting price for {vegetable_name}: {e}"
 
 @app.route('/')
 def index():
