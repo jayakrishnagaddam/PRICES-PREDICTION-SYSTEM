@@ -21,9 +21,6 @@ def predict_price(vegetable_name):
     except Exception as e:
         return f"Error predicting price for {vegetable_name}: {e}"
 
-@app.route('/')
-def index():
-    return render_template("index.html")
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -43,7 +40,7 @@ def signup():
 
     return render_template('signup.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     error = None
 
