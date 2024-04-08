@@ -2,13 +2,12 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_pymongo import PyMongo
 import os
 from vegetableprediction import method
-from dotenv import load_dotenv
+
 
 
 app = Flask(__name__)
-load_dotenv(dotenv_path="database.env")
-app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.config["SECRET_KEY"] = "1234"
+app.config["MONGO_URI"] = "mongodb+srv://2100090162:manigaddam@deepsheild.kzgpo9p.mongodb.net/VegetableDB"
 
 mongo = PyMongo(app)
 
