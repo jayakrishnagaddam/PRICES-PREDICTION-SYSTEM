@@ -1,19 +1,13 @@
 [tool.poetry]
-name = "repl-nix-profile-jayakrishna"
-version = "0.1.0"
-description = ""
-authors = ["Replit user <<>>"]
+name = "flask"
+version = "3.10"
+description = "no"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
 readme = "README.md"
-packages = [{include = "repl_nix_profile_jayakrishna"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
-flask = "^3.0.0"
-flask-pymongo = "^2.3.0"
-numpy="^1.18.5"
-pandas="^1.0.5"
-scikit-learn="^0.23.1"
-dotenv
+python = "y"
 
 
 [build-system]
